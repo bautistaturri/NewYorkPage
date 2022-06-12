@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+main{
+    background-image: url(../fondo.jpg);
+}
+h1{
+    transform: translate(3px,3px);
+    font-size: 1em;
+    height: 20px;
+}
+.caja{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 1fr 1fr 1fr;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+/* primero la estructura de la caja, ahora cada contenedor */
+.caja_Contenedor{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.caja_elemento{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(171, 132, 53);
+    transform: skew(15deg);
+   
+  
+    /* ahora le damos ancho al boton */
+    height: 50%;
+    width: 10%;
+
+}
+.caja_elemento:hover{
+    transition: .40s;
+    
+    transform: scale(1.15);
+/* no se porque no me lo toma */
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid: 15% 70% 15% / repeat(6,1fr);
+    grid-template-areas: 
+    "header header header header header header"
+    "main main main main main main "
+    "footer footer footer footer footer footer  ";
+    gap:1%;
+}
+header{
+    background-image: linear-gradient(to top,rgb(78,77,75),rgb(139, 158, 80));
+    background-color: rgb(78,77,75);
+}
+.encabezado{
+    /* con esto toma todos los cuadros llamados header */
+    grid-area: header;
+}
+.body{
+    grid-area: main;
+}
+.pie{
+    grid-area: footer;
+}
+.change{
+    align-items: center;
+    width: 50px;
+    height: 10px;
+}
+
+.met{
+    text-align: center;
+    
+}
+.cambio{
+    animation-name: cambiocolor;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    margin: 20px;
+    background-color: rgb(171, 132, 53);
+    border: solid 3px black;
+}
+footer{
+    grid-area: footer;
+    background-color: rgb(78,77,75);
+}
+@keyframes cambiocolor{
+    0%{
+        background-color:red;
+    }
+    25%{
+        background-color: orange;
+    }
+    50%{
+        background-color: aqua;
+    }
+    100%{
+        background-color: blueviolet;
+    }
+}
+@keyframes cambioancho{
+    0%{
+        width: 100%;
+        background-color: beige;
+    }
+    50%{
+        width: 75%;
+        background-color: blanchedalmond;
+    }
+    100%{
+        width: 50%;
+        background-color: blueviolet;
+    }
+}
+@media screen and (max-width:600px){
+    body{
+        grid: 20% 60% 20% /repeat(6,1fr);
+        grid-template-areas: 
+        "header header header header header header"
+        "main main main main main main "
+        "footer footer footer footer footer footer ";
+    }
+}
