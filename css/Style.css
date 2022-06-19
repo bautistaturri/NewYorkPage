@@ -21,12 +21,12 @@ h1{
 }
 /* primero la estructura de la caja, ahora cada contenedor */
 .caja_Contenedor{
-    
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     height: 100%;
+    
 }
 
 .caja_elemento{
@@ -35,12 +35,12 @@ h1{
     align-items: center;
     background: rgb(171, 132, 53);
     transform: skew(15deg);
-   
-  
-    /* ahora le damos ancho al boton */
+    border: solid 3px black;
+    background-color: rgb(172, 151, 111);
+    padding: 5px;
+    justify-content: space-around;
     height: 50%;
     width: 10%;
-
 }
 .caja_elemento:hover{
     transition: .40s;
@@ -59,6 +59,7 @@ body{
     "footer footer footer footer footer footer  ";
     gap:1%;
 }
+
 header{
     background-image: linear-gradient(to top,rgb(78,77,75),rgb(139, 158, 80));
     background-color: rgb(78,77,75);
@@ -90,7 +91,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 100%;
+    height: 50%;
     margin: 20px;
     background-color: rgb(171, 132, 53);
     border: solid 3px black;
@@ -98,6 +99,21 @@ header{
 footer{
     grid-area: footer;
     background-color: rgb(78,77,75);
+}
+.parapie{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+
+}
+.borde{
+    border: solid 3px black;
+}
+.carousel-item{
+    height: 70vh;
+min-height: 30px;
 }
 @keyframes cambiocolor{
     0%{
